@@ -24,6 +24,7 @@ build:
         - "source/images"
     # Excuted command when use 'ink publish'
     publish: |
+        cd blog
         git add . -A
         git commit -m "update blog"
-        git push origin
+        git push --set-upstream origin master

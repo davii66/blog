@@ -50,6 +50,7 @@ header("Access-Control-Allow-Credentials:true");
 HashOver提供一个主题机制，可以在`hashover/themes`各个主题的文件夹中修改`layout.html`和`style.css`来自定义样式。
 具体魔改例子可看本站评论区，也可自己下载本站CSS。
 ### 几个魔改想法（尚未实现）：
+* 加上表情包
 * 加上显示地区和UA
 * 加上评论等级
 * 在不启用密码的情况下做评论管理
