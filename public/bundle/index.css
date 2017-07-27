@@ -915,6 +915,12 @@ a:hover {
 #comment #hashover-post-button:hover{
     background-color: #0ba756 !important;
 }
+#hashover a {
+    color: #009a61 !important;
+}
+#hashover .hashover-comment .hashover-footer .hashover-buttons a:hover {
+    background-color: #1bb565 !important;
+}
 .hashover-main-title:before{
     color: #1bb565 !important;
 }
