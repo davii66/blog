@@ -937,3 +937,6 @@ footer .abc {
     line-height: 35px;
     padding: 0;
 }
+.instantclick-bar {
+    background: #fff !important;
+}

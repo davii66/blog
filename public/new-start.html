@@ -60,7 +60,7 @@
   <ul class="menu">
       <li class="menu-item"><a href="/archive.html">归档</a></li>
       <li class="menu-item"><a href="/tag.html">标签</a></li>
-      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+      <li class="menu-item"><a  data-no-instant href="/atom.xml">订阅</a></li>
   </ul>
 </header>
 
@@ -101,7 +101,8 @@
 			</div>
 			
 <div id="comment">
-	<script src="https://comment.homeii.info"></script>
+	<div id="hashover"></div>
+	<script id="e123say" src="https://comment.homeii.info" async></script>
 </div>
 
 
@@ -109,7 +110,7 @@
         <footer class="footer">
     <span class="copyright">
         翁の微语 ©
-        <script type="text/javascript">
+        <script type="text/javascript"  data-no-instant>
             document.write(new Date().getFullYear());
         </script>
     </span>
@@ -121,6 +122,7 @@
     <span class="publish">闽ICP备14012513号-1 Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
 </footer>
 
-        <script src="/bundle/index.js"></script>
+    <script src="/bundle/index.js"></script>
+    <script src="/bundle/instantClick.js" data-no-instant></script>
     </body>
 </html>
