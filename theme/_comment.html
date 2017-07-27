@@ -1,6 +1,7 @@
 {{if .Site.Comment}}
 <div id="comment">
 	<div id="hashover"></div>
-	<script id="e123say" data-url="{{.Site.Url}}/{{.Link}}" src="https://comment.homeii.info" async></script>
+	<script>_http_page="{{.Site.Url}}/{{.Link}}"</script>
+	<script id="e123say" src="https://comment.homeii.info" async></script>
 </div>
 {{end}}
