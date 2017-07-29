@@ -13,3 +13,6 @@ return{supported:R,init:function(){if(!k)if(R){for(var a=arguments.length-1;0<=a
 function(){var a=w(e.href);a!=k&&(a in h?(h[k].scrollY=pageYOffset,k=a,K(h[a].title,h[a].body,!1,h[a].scrollY)):e.href=e.href)})}else t("change",!0)},on:function(a,b){B[a].push(b)}}}(document,location);
 
 InstantClick.init(50);
+InstantClick.on('change', function() {
+	_hmt.push(['_trackPageview',location.pathname + location.search]);
+});
