@@ -908,12 +908,14 @@ a:hover {
 .header-menu li a:hover{
     border-color:#fff;
 }
-#hashover-post-button {
+#hashover-post-button,.hashover-reply-post,#comment .hashover-submit.hashover-reply-cancel {
     background: #1bb565 !important;
     cursor: pointer;
+    color:#fff !important;
 }
-#comment #hashover-post-button:hover{
+#comment #hashover-post-button:hover, #comment .hashover-submit.hashover-reply-post:hover,#comment .hashover-submit.hashover-reply-cancel:hover{
     background-color: #0ba756 !important;
+    color:#fff !important;
 }
 #hashover a {
     color: #009a61 !important;
