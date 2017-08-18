@@ -97,16 +97,16 @@
 <p>下载smtp库后，放在hashover的scripts目录下。接下来，修改配置文件<code>settings.php</code>，将下面代码放到<code>public$notificationEmail</code>之上：</p>
 
 <pre><code class="language-php">//SMTP Settings
-    public$smtp_host    = &quot;smtp.exmail.qq.com&quot;;//SMTP服务器
-    public$smtp_port    = &quot;465&quot;;       //smtp端口
-    public$smtp_encrypt = &quot;ssl&quot;;       //是否启用加密,null或者'ssl'
-    public$smtp_user    = &quot;i@ye4.pw&quot;;      //发件邮箱
-    public$smtp_pass    = &quot;********&quot;;      //密码
-    public$smtp_name    = &quot;Weng's Blog&quot;;   //博客名称，hashover没提供接口
-    public$smtp_sender    = &quot;某翁的信使&quot;;  //发信人昵称
+    public $smtp_host    = &quot;smtp.exmail.qq.com&quot;;//SMTP服务器
+    public $smtp_port    = &quot;465&quot;;       //smtp端口
+    public $smtp_encrypt = &quot;ssl&quot;;       //是否启用加密,null或者'ssl'
+    public $smtp_user    = &quot;i@ye4.pw&quot;;      //发件邮箱
+    public $smtp_pass    = &quot;********&quot;;      //密码
+    public $smtp_name    = &quot;Weng's Blog&quot;;   //博客名称，hashover没提供接口
+    public $smtp_sender    = &quot;某翁的信使&quot;;  //发信人昵称
     //模板，兼容Wordpress插件Comment Reply Notification。
-    public$smtp_title   = &quot;Hi，您在《[postname]》的评论被回复啦！&quot;;
-    public$smtp_tpl     = &lt;&lt;&lt;EOT
+    public $smtp_title   = &quot;Hi，您在《[postname]》的评论被回复啦！&quot;;
+    public $smtp_tpl     = &lt;&lt;&lt;EOT
 &lt;div style=&quot;-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;&quot;&gt;
     &lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;
     &lt;span style=&quot;color: #1bb565;font-weight: bold;&quot;&gt;&gt;&lt;/span&gt;
@@ -121,8 +121,8 @@
 &lt;/div&gt;
 EOT;
     //有任何新评论管理员都会收到邮件的模板。
-    public$smtp_admin_title   = &quot;[blogname]: 文章《[postname]》有新评论&quot;;
-    public$smtp_admin_tpl     = &lt;&lt;&lt;EOT
+    public $smtp_admin_title   = &quot;[blogname]: 文章《[postname]》有新评论&quot;;
+    public $smtp_admin_tpl     = &lt;&lt;&lt;EOT
 &lt;div style=&quot;-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;&quot;&gt;
     &lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;
     &lt;span style=&quot;color: #1bb565;font-weight: bold;&quot;&gt;&gt;&lt;/span&gt;

@@ -22,16 +22,16 @@ hashover默认使用mail函数发送邮件，一般情况我们无法收到。�
 
 ```php
 //SMTP Settings
-    public$smtp_host    = "smtp.exmail.qq.com";//SMTP服务器
-    public$smtp_port    = "465";       //smtp端口
-    public$smtp_encrypt = "ssl";       //是否启用加密,null或者'ssl'
-    public$smtp_user    = "i@ye4.pw";      //发件邮箱
-    public$smtp_pass    = "********";      //密码
-    public$smtp_name    = "Weng's Blog";   //博客名称，hashover没提供接口
-    public$smtp_sender    = "某翁的信使";  //发信人昵称
+    public $smtp_host    = "smtp.exmail.qq.com";//SMTP服务器
+    public $smtp_port    = "465";       //smtp端口
+    public $smtp_encrypt = "ssl";       //是否启用加密,null或者'ssl'
+    public $smtp_user    = "i@ye4.pw";      //发件邮箱
+    public $smtp_pass    = "********";      //密码
+    public $smtp_name    = "Weng's Blog";   //博客名称，hashover没提供接口
+    public $smtp_sender    = "某翁的信使";  //发信人昵称
     //模板，兼容Wordpress插件Comment Reply Notification。
-    public$smtp_title   = "Hi，您在《[postname]》的评论被回复啦！";
-    public$smtp_tpl     = <<<EOT
+    public $smtp_title   = "Hi，您在《[postname]》的评论被回复啦！";
+    public $smtp_tpl     = <<<EOT
 <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;">
 	<h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">
 	<span style="color: #1bb565;font-weight: bold;">></span>
@@ -46,8 +46,8 @@ hashover默认使用mail函数发送邮件，一般情况我们无法收到。�
 </div>
 EOT;
 	//有任何新评论管理员都会收到邮件的模板。
-    public$smtp_admin_title   = "[blogname]: 文章《[postname]》有新评论";
-    public$smtp_admin_tpl     = <<<EOT
+    public $smtp_admin_title   = "[blogname]: 文章《[postname]》有新评论";
+    public $smtp_admin_tpl     = <<<EOT
 <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;">
 	<h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">
 	<span style="color: #1bb565;font-weight: bold;">></span>
