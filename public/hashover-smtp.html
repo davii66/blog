@@ -199,7 +199,7 @@ $mail-&gt;body(str_replace(array(
     &quot;[cc_url]&quot;
 ),array(
     $this-&gt;setup-&gt;smtp_name,
-    $this-&gt;setup-&gt;domain,
+    $urls[&quot;sheme&quot;].&quot;://&quot;.$urls[&quot;host&quot;].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
     $this-&gt;setup-&gt;pageTitle,
     $reply_comment['date'],
     $reply_comment['body'],
@@ -277,7 +277,7 @@ $result = $mail-&gt;send();
 <p>本博客已修改，可就地评论体验效果。不过因测试导致发送大量邮件，本博客使用的邮箱被qq邮箱拦截，截止发布本文时尚未恢复，并不代表该功能失效。</p>
 </blockquote>
 
-<h3>懒人包（<code>smtp.php+writecomments.php</code>）：<a href="/attachments/hashover-smtp.zip">&gt;hashover-smtp.zip&lt;</a></h3>
+<h3>懒人包（<code>smtp.php+writecomments.php</code>）：<a href="/attachments/hashover-smtp-pack.zip">&gt;hashover-smtp.zip&lt;</a></h3>
 
 <h2>几个魔改想法（List）：</h2>
 

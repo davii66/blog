@@ -122,7 +122,7 @@ $mail->body(str_replace(array(
     "[cc_url]"
 ),array(
     $this->setup->smtp_name,
-    $this->setup->domain,
+    $urls["sheme"]."://".$urls["host"].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
     $this->setup->pageTitle,
     $reply_comment['date'],
     $reply_comment['body'],
@@ -196,7 +196,7 @@ $result = $mail->send();
 
 >本博客已修改，可就地评论体验效果。不过因测试导致发送大量邮件，本博客使用的邮箱被qq邮箱拦截，截止发布本文时尚未恢复，并不代表该功能失效。
 
-### 懒人包（`smtp.php+writecomments.php`）：[>hashover-smtp.zip<](/attachments/hashover-smtp.zip)
+### 懒人包（`smtp.php+writecomments.php`）：[>hashover-smtp.zip<](/attachments/hashover-smtp-pack.zip)
 
 ## 几个魔改想法（List）：
 * （完成）  完善邮件功能
