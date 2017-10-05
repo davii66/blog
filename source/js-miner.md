@@ -1,6 +1,6 @@
 title: "JS挖矿替代广告：CoinHive&ProjectPoi"
 date: 2017-10-05 23:00:00 +0800
-update: 2017-10-25 23:00:00 +0800
+update: 2017-10-05 23:00:00 +0800
 author: me
 cover: "-/images/js-miner.png"
 tags:

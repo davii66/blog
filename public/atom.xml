@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>翁の微语</title>
   <id>http://blog.e123.pw</id>
-  <updated>2017-10-05T22:47:46+08:00</updated>
+  <updated>2017-10-05T22:51:59+08:00</updated>
   <subtitle>一个博客 · 一方净土</subtitle>
   <link href="http://blog.e123.pw"></link>
   <author>
@@ -9,8 +9,8 @@
   </author>
   <entry>
     <title>JS挖矿替代广告：CoinHive&amp;ProjectPoi</title>
-    <updated>2017-10-25T23:00:00+08:00</updated>
-    <id>tag:blog.e123.pw,2017-10-25:/js-miner.html</id>
+    <updated>2017-10-05T23:00:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-10-05:/js-miner.html</id>
     <content type="html">&lt;p&gt;之前看到一则新闻说海盗湾在网站上挂了挖矿“病毒”，于是去研究了一番，发现其实是一个用js挖矿代替广告和验证码的服务。&#xA;这项服务的提供商是国外公司CoinHive，当然还有一个国内“仿品” ProjectPoi。&lt;/p&gt;&#xA;</content>
     <link href="http://blog.e123.pw/js-miner.html"></link>
     <author>
