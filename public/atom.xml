@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+  <title>翁の微语</title>
+  <id>http://blog.e123.pw</id>
+  <updated>2017-10-05T22:47:46+08:00</updated>
+  <subtitle>一个博客 · 一方净土</subtitle>
+  <link href="http://blog.e123.pw"></link>
+  <author>
+    <name>翁の微语</name>
+  </author>
+  <entry>
+    <title>JS挖矿替代广告：CoinHive&amp;ProjectPoi</title>
+    <updated>2017-10-25T23:00:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-10-25:/js-miner.html</id>
+    <content type="html">&lt;p&gt;之前看到一则新闻说海盗湾在网站上挂了挖矿“病毒”，于是去研究了一番，发现其实是一个用js挖矿代替广告和验证码的服务。&#xA;这项服务的提供商是国外公司CoinHive，当然还有一个国内“仿品” ProjectPoi。&lt;/p&gt;&#xA;</content>
+    <link href="http://blog.e123.pw/js-miner.html"></link>
+    <author>
+      <name>某翁</name>
+    </author>
+  </entry>
+  <entry>
+    <title>hashover系列第二篇：SMTP发邮件</title>
+    <updated>2017-08-18T21:50:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-08-18:/hashover-smtp.html</id>
+    <content type="html">&lt;p&gt;hashover默认使用mail函数发送邮件，一般情况我们无法收到。因此，我们要引入smtp库解决邮件问题。&lt;/p&gt;&#xA;</content>
+    <link href="http://blog.e123.pw/hashover-smtp.html"></link>
+    <author>
+      <name>某翁</name>
+    </author>
+  </entry>
+  <entry>
+    <title>移植无损压图工具LimitPNG到web端</title>
+    <updated>2017-07-29T20:50:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-07-29:/limitpng-online.html</id>
+    <content type="html">&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://nullice.com/limitPNG/&#34;&gt;limitPNG&lt;/a&gt; 支持无损压缩和有损压缩两种压缩方式，其中无损压缩是不损失任何画质的压缩方法，与有损压缩相比（如 tinypng），虽然体积没优势，但是在对品质有要求的生产环境中不改变原图任何一个像素是必须的。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&#xA;&lt;p&gt;增加Web版本后，使用更加简便。&lt;/p&gt;&#xA;</content>
+    <link href="http://blog.e123.pw/limitpng-online.html"></link>
+    <author>
+      <name>某翁</name>
+    </author>
+  </entry>
+  <entry>
+    <title>使用&amp;魔改hashover评论系统</title>
+    <updated>2017-07-26T20:30:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-07-26:/hashover.html</id>
+    <content type="html">&lt;p&gt;第三方评论的战场上，多说倒下了，云跟帖倒下了，disqus连接受阻，剩下搜狐畅言和几个小平台摇摇欲坠&amp;hellip;&#xA;无论如何，这时候还是自建评论系统最可靠。这里要讲的就是目前比较成熟的hashover。&lt;/p&gt;&#xA;</content>
+    <link href="http://blog.e123.pw/hashover.html"></link>
+    <author>
+      <name>某翁</name>
+    </author>
+  </entry>
+  <entry>
+    <title>MyBlog新的开始</title>
+    <updated>2017-07-26T18:00:00+08:00</updated>
+    <id>tag:blog.e123.pw,2017-07-26:/new-start.html</id>
+    <content type="html">&lt;p&gt;没错，又是我。这次又把博客推翻重做了一遍，换了最简单的静态博客。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;不忘初心，方得始终。&lt;/p&gt;&#xA;</content>
+    <link href="http://blog.e123.pw/new-start.html"></link>
+    <author>
+      <name>某翁</name>
+    </author>
+  </entry>
+</feed>
