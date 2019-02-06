@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="翁の微语">
+<meta name="twitter:description" content="一个博客 · 一方净土">
+<meta name="twitter:image:src" content="http://blog.e123.pw">
+
+<meta property="og:url" content="http://blog.e123.pw">
+<meta property="og:title" content="翁の微语">
+<meta property="og:description" content="一个博客 · 一方净土">
+<meta property="og:site_name" content="翁の微语">
+<meta property="og:image" content="http://blog.e123.pw">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="翁の微语">
+<meta itemprop="description" content="一个博客 · 一方净土">
+<meta itemprop="image" content="http://blog.e123.pw">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?08fc53efb438431ff8bd6f4574cdfcd7";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+        <meta name="keywords" content="博客,程序,评论,邮件,hashover,">
+        <meta name="description" content="hashover系列第二篇：SMTP发邮件">
+        <meta name="author" content="某翁">
+		
+		<link rel="canonical" href="http://blog.e123.pw/hashover-smtp.html">
+        <title>hashover系列第二篇：SMTP发邮件</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    
+    翁の微语
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a  data-no-instant href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">hashover系列第二篇：SMTP发邮件</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(https://q.qlogo.cn/qqapp/100229475/B9BC376B79B4620E5E437DC3CD51F089/100);"></span>
+                    <a class="name" href="/about.me.html">某翁</a>
+                    
+                    <span class="date" data-time="1503064200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%8d%9a%e5%ae%a2/index.html">博客</a><a class="tag" href="/tag/%e7%a8%8b%e5%ba%8f/index.html">程序</a><a class="tag" href="/tag/%e8%af%84%e8%ae%ba/index.html">评论</a><a class="tag" href="/tag/%e9%82%ae%e4%bb%b6/index.html">邮件</a><a class="tag" href="/tag/hashover/index.html">hashover</a></span>
+                </section>
+                <article class="content"><p>hashover默认使用mail函数发送邮件，一般情况我们无法收到。因此，我们要引入smtp库解决邮件问题。</p>
+
+<p><img src="data:image/gif;base64,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" data-src="/images/hashover.png" alt="" /></p>
+
+<h2>SMTP发送邮件</h2>
+
+<blockquote>
+<p>使用的SMTP库的Github地址：<a href="https://github.com/swt83/php-smtp">https://github.com/swt83/php-smtp</a>。
+这个库使用composer安装依赖，改造不方便，可以下载我修改的文件：<a href="/attachments/smtp.php.zip">&gt;smtp.php.zip&lt;</a></p>
+</blockquote>
+
+<p>下载smtp库后，放在hashover的scripts目录下。接下来，修改配置文件<code>settings.php</code>，将下面代码放到<code>public$notificationEmail</code>之上：</p>
+
+<pre><code class="language-php">//SMTP Settings
+    public $smtp_host    = &quot;smtp.exmail.qq.com&quot;;//SMTP服务器
+    public $smtp_port    = &quot;465&quot;;       //smtp端口
+    public $smtp_encrypt = &quot;ssl&quot;;       //是否启用加密,null或者'ssl'
+    public $smtp_user    = &quot;i@ye4.pw&quot;;      //发件邮箱
+    public $smtp_pass    = &quot;********&quot;;      //密码
+    public $smtp_name    = &quot;Weng's Blog&quot;;   //博客名称，hashover没提供接口
+    public $smtp_sender    = &quot;某翁的信使&quot;;  //发信人昵称
+    //模板，兼容Wordpress插件Comment Reply Notification。
+    public $smtp_title   = &quot;Hi，您在《[postname]》的评论被回复啦！&quot;;
+    public $smtp_tpl     = &lt;&lt;&lt;EOT
+&lt;div style=&quot;-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;&quot;&gt;
+	&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;
+	&lt;span style=&quot;color: #1bb565;font-weight: bold;&quot;&gt;&gt;&lt;/span&gt;
+	您在 &lt;a style=&quot;text-decoration:none;color: #1bb565;&quot; href=&quot;[blogurl]&quot; target=&quot;_blank&quot;&gt;[blogname]&lt;/a&gt; 博客上的留言有回复啦！&lt;/h2&gt;
+	&lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;
+		&lt;p&gt;亲爱的 [pc_author]， 您好！您曾在文章《[postname]》上发表评论：&lt;/p&gt;
+		&lt;p style=&quot;background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0&quot;&gt;[pc_comment]&lt;/p&gt;
+		&lt;p&gt;[cc_author]给您的回复如下：&lt;/p&gt;
+		&lt;p style=&quot;background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0&quot;&gt;[cc_comment]&lt;/p&gt;
+		&lt;p&gt;您可以点击&lt;a href=&quot;[cc_url]&quot;&gt;查看回复的完整内容&lt;/a&gt;，欢迎再次光临&lt;a href=&quot;[blogurl]&quot;&gt;[blogname]&lt;/a&gt; 。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+EOT;
+	//有任何新评论管理员都会收到邮件的模板。
+    public $smtp_admin_title   = &quot;[blogname]: 文章《[postname]》有新评论&quot;;
+    public $smtp_admin_tpl     = &lt;&lt;&lt;EOT
+&lt;div style=&quot;-moz-border-radius: 5px;-webkit-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;background-color:white;border-top:2px solid #1bb565;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:50px auto;color:#555555;font-family:Century Gothic,Trebuchet MS,Hiragino Sans GB,微软雅黑,Microsoft Yahei,Tahoma,Helvetica,Arial,SimSun,sans-serif;font-size:12px;&quot;&gt;
+	&lt;h2 style=&quot;border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;&quot;&gt;
+	&lt;span style=&quot;color: #1bb565;font-weight: bold;&quot;&gt;&gt;&lt;/span&gt;
+	文章 &lt;a style=&quot;text-decoration:none;color: #1bb565;&quot; href=&quot;[cc_url]&quot; target=&quot;_blank&quot;&gt;[postname]&lt;/a&gt; 有新评论啦！&lt;/h2&gt;
+	&lt;div style=&quot;padding:0 12px 0 12px;margin-top:18px&quot;&gt;
+		&lt;p&gt;[cc_author] 说：&lt;/p&gt;
+		&lt;p style=&quot;background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0&quot;&gt;[cc_comment]&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+EOT;
+</code></pre>
+
+<p>随后，打开<code>writecomments.php</code>，找到<code>writeComment</code>函数，将其中两处和下面一样的代码注释掉。（防止回复者邮箱被发给被回复者）</p>
+
+<pre><code class="language-php">$from_line .= ' &lt;' . $this-&gt;email . '&gt;';
+</code></pre>
+
+<p>找到第一个<code>mail</code>函数，注释掉，并在下方加上smtp发送代码：</p>
+
+<pre><code class="language-php">//mail ($reply_email, $this-&gt;setup-&gt;domain . ' - New Reply', $reply_message, $this-&gt;userHeaders);
+//被注释掉的mail函数
+$urls=parse_url($this-&gt;setup-&gt;pageURL);
+$smtp_config=array(
+    'debug_mode' =&gt; false,
+    'default' =&gt; 'primary',
+    'connections' =&gt; [
+        'primary' =&gt; [
+        'host' =&gt; $this-&gt;setup-&gt;smtp_host,
+        'port' =&gt; $this-&gt;setup-&gt;smtp_port,
+        'secure' =&gt; $this-&gt;setup-&gt;smtp_encrypt,
+        'auth' =&gt; true,
+        'user' =&gt; $this-&gt;setup-&gt;smtp_user,
+        'pass' =&gt; $this-&gt;setup-&gt;smtp_pass,
+        ],
+    ],
+    'localhost' =&gt; $this-&gt;setup-&gt;domain,
+);
+$mail=new smtp($smtp_config);
+$mail-&gt;to($reply_email);
+$mail-&gt;from($this-&gt;setup-&gt;smtp_user,$this-&gt;setup-&gt;smtp_sender);
+$mail-&gt;subject(str_replace(array(
+    &quot;[blogname]&quot;,
+    &quot;[blogurl]&quot;,
+    &quot;[postname]&quot;,
+    &quot;[pc_date]&quot;,
+    &quot;[pc_comment]&quot;,
+    &quot;[pc_author]&quot;,
+    &quot;[cc_date]&quot;,
+    &quot;[cc_comment]&quot;,
+    &quot;[cc_author]&quot;,
+    &quot;[cc_url]&quot;
+),array(
+    $this-&gt;setup-&gt;smtp_name,
+    $urls[&quot;sheme&quot;].&quot;://&quot;.$urls[&quot;host&quot;].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
+    html_entity_decode($this-&gt;setup-&gt;pageTitle),
+    $reply_comment['date'],
+    $reply_comment['body'],
+    $reply_name,
+    $this-&gt;commentData['date'],
+    $this-&gt;commentData['body'],
+    $from_line,
+    $this-&gt;setup-&gt;pageURL. '#' . $permalink
+),$this-&gt;setup-&gt;smtp_title));
+$mail-&gt;body(str_replace(array(
+    &quot;[blogname]&quot;,
+    &quot;[blogurl]&quot;,
+    &quot;[postname]&quot;,
+    &quot;[pc_date]&quot;,
+    &quot;[pc_comment]&quot;,
+    &quot;[pc_author]&quot;,
+    &quot;[cc_date]&quot;,
+    &quot;[cc_comment]&quot;,
+    &quot;[cc_author]&quot;,
+    &quot;[cc_url]&quot;
+),array(
+    $this-&gt;setup-&gt;smtp_name,
+    $urls[&quot;sheme&quot;].&quot;://&quot;.$urls[&quot;host&quot;].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
+    $this-&gt;setup-&gt;pageTitle,
+    $reply_comment['date'],
+    $reply_comment['body'],
+    $reply_name,
+    $this-&gt;commentData['date'],
+    $this-&gt;commentData['body'],
+    $from_line,
+    $this-&gt;setup-&gt;pageURL. '#' . $permalink
+),$this-&gt;setup-&gt;smtp_tpl));
+$result = $mail-&gt;send();
+</code></pre>
+
+<p>再往下找到第二个mail函数，注释，加上提醒管理员的代码：</p>
+
+<pre><code class="language-php">//mail ($this-&gt;setup-&gt;notificationEmail, 'New Comment', $webmaster_message, $this-&gt;headers);$urls=parse_url($this-&gt;setup-&gt;pageURL);
+//被注释掉的mail函数
+$smtp_config=array(
+    'debug_mode' =&gt; false,
+    'default' =&gt; 'primary',
+    'connections' =&gt; [
+        'primary' =&gt; [
+            'host' =&gt; $this-&gt;setup-&gt;smtp_host,
+            'port' =&gt; $this-&gt;setup-&gt;smtp_port,
+            'secure' =&gt; $this-&gt;setup-&gt;smtp_encrypt,
+            'auth' =&gt; true,
+            'user' =&gt; $this-&gt;setup-&gt;smtp_user,
+            'pass' =&gt; $this-&gt;setup-&gt;smtp_pass,
+        ],
+    ],
+    'localhost' =&gt; $this-&gt;setup-&gt;domain,
+);
+$mail=new smtp($smtp_config);
+$mail-&gt;to($this-&gt;setup-&gt;notificationEmail);
+$mail-&gt;from($this-&gt;setup-&gt;smtp_user,$this-&gt;setup-&gt;smtp_sender);
+$mail-&gt;subject(str_replace(array(
+    &quot;[blogname]&quot;,
+    &quot;[blogurl]&quot;,
+    &quot;[postname]&quot;,
+    &quot;[cc_date]&quot;,
+    &quot;[cc_comment]&quot;,
+    &quot;[cc_author]&quot;,
+    &quot;[cc_url]&quot;
+),array(
+    $this-&gt;setup-&gt;smtp_name,
+    $urls[&quot;sheme&quot;].&quot;://&quot;.$urls[&quot;host&quot;].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
+    html_entity_decode($this-&gt;setup-&gt;pageTitle),
+    $this-&gt;commentData['date'],
+    $this-&gt;commentData['body'],
+    $from_line,
+    $this-&gt;setup-&gt;pageURL. '#' . $permalink
+),$this-&gt;setup-&gt;smtp_admin_title));
+$mail-&gt;body(str_replace(array(
+    &quot;[blogname]&quot;,
+    &quot;[blogurl]&quot;,
+    &quot;[postname]&quot;,
+    &quot;[cc_date]&quot;,
+    &quot;[cc_comment]&quot;,
+    &quot;[cc_author]&quot;,
+    &quot;[cc_url]&quot;
+),array(
+    $this-&gt;setup-&gt;smtp_name,
+    $urls[&quot;sheme&quot;].&quot;://&quot;.$urls[&quot;host&quot;].isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '',
+    html_entity_decode($this-&gt;setup-&gt;pageTitle),
+    $this-&gt;commentData['date'],
+    $this-&gt;commentData['body'],
+    $from_line,
+    $this-&gt;setup-&gt;pageURL. '#' . $permalink
+),$this-&gt;setup-&gt;smtp_admin_tpl));
+$result = $mail-&gt;send();
+</code></pre>
+
+<p>保存，接下来应该就能收到邮件了。注意，自己回自己不会发送。</p>
+
+<blockquote>
+<p>本博客已修改，可就地评论体验效果。不过因测试导致发送大量邮件，本博客使用的邮箱被qq邮箱拦截，截止发布本文时尚未恢复，并不代表该功能失效。</p>
+</blockquote>
+
+<h3>懒人包（<code>smtp.php+writecomments.php</code>）：<a href="/attachments/hashover-smtp-pack.zip">&gt;hashover-smtp.zip&lt;</a></h3>
+
+<h2>几个魔改想法（List）：</h2>
+
+<ul>
+<li>（完成）  完善邮件功能</li>
+<li>（准备写文章）加上表情包</li>
+<li>（实现中）加上显示地区和UA</li>
+<li>（不可能）加上评论等级</li>
+<li>（实现中）在不启用密码的情况下做评论管理</li>
+</ul>
+
+<p>如果真能实现，这个系统就万能了（才不是呢）。</p>
+</article>
+            </article>
+        </article>
+		<article class="container2">
+			<div class="main article">
+				<section class="author">
+                    <div class="avatar" style="background-image: url(https://q.qlogo.cn/qqapp/100229475/B9BC376B79B4620E5E437DC3CD51F089/100);"></div>
+                    <a class="name" href="/about.me.html">某翁</a>
+                    <div class="intro">一个普通学生而已x</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/referrer-policy-hotlink.html">Referrer-Policy与Referrer防盗链</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/limitpng-online.html">移植无损压图工具LimitPNG到web端</a>
+                    </section>
+                    
+                </section>
+			</div>
+			
+<div id="comment">
+	<div id="hashover"></div>
+	<script>_http_page="http:\/\/blog.e123.pw/hashover-smtp.html"</script>
+	<script id="e123say" src="https://comment.homeii.info" async></script>
+</div>
+
+
+		</article>
+        <footer class="footer">
+    <span class="copyright">
+        翁の微语 ©
+        <script type="text/javascript"  data-no-instant>
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+	<span class="abc">
+		<span class="abctxt">文件存储&CDN由</span>
+		<span class="abctxt"><a href="https://www.upyun.com" rel="nofollow" target="_blank"><img src="/images/upyun.png"></a></span>
+		<span class="abctxt">提供</span>
+	</span>
+    <span class="publish"><a href="http://www.miibeian.gov.cn/">闽ICP备14012513号</a> Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+    <script src="/bundle/index.js"></script>
+    <script src="/bundle/instantClick.js?v1" data-no-instant></script>
+    </body>
+</html>

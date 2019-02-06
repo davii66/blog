@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="翁の微语">
+<meta name="twitter:description" content="一个博客 · 一方净土">
+<meta name="twitter:image:src" content="http://blog.e123.pw">
+
+<meta property="og:url" content="http://blog.e123.pw">
+<meta property="og:title" content="翁の微语">
+<meta property="og:description" content="一个博客 · 一方净土">
+<meta property="og:site_name" content="翁の微语">
+<meta property="og:image" content="http://blog.e123.pw">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="翁の微语">
+<meta itemprop="description" content="一个博客 · 一方净土">
+<meta itemprop="image" content="http://blog.e123.pw">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?08fc53efb438431ff8bd6f4574cdfcd7";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+        <meta name="keywords" content="博客,程序,评论,">
+        <meta name="description" content="使用&amp;魔改hashover评论系统">
+        <meta name="author" content="某翁">
+		
+		<link rel="canonical" href="http://blog.e123.pw/hashover.html">
+        <title>使用&amp;魔改hashover评论系统</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    
+    翁の微语
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a  data-no-instant href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">使用&amp;魔改hashover评论系统</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(https://q.qlogo.cn/qqapp/100229475/B9BC376B79B4620E5E437DC3CD51F089/100);"></span>
+                    <a class="name" href="/about.me.html">某翁</a>
+                    
+                    <span class="date" data-time="1501072200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%8d%9a%e5%ae%a2/index.html">博客</a><a class="tag" href="/tag/%e7%a8%8b%e5%ba%8f/index.html">程序</a><a class="tag" href="/tag/%e8%af%84%e8%ae%ba/index.html">评论</a></span>
+                </section>
+                <article class="content"><p>第三方评论的战场上，多说倒下了，云跟帖倒下了，disqus连接受阻，剩下搜狐畅言和几个小平台摇摇欲坠&hellip;
+无论如何，这时候还是自建评论系统最可靠。这里要讲的就是目前比较成熟的hashover。</p>
+
+<p><img src="data:image/gif;base64,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" data-src="/images/hashover.png" alt="" /></p>
+
+<h2>下载&amp;安装</h2>
+
+<blockquote>
+<p>Github地址：<a href="https://github.com/jacobwb/hashover-next">https://github.com/jacobwb/hashover-next</a></p>
+</blockquote>
+
+<p>直接打包下载解压到服务器即可。随后，按照里面的提示修改<code>hashover/scripts/settings.php</code>，即可直接使用。</p>
+
+<h2>探坑</h2>
+
+<p>虽然现在hashover已经可以正常运行，但其实还存在有很多坑。下面是我踩到的部分。</p>
+
+<h3>PDO错误</h3>
+
+<p>在选择mysql并填好数据库信息后出现了这样的错误提示：<code>HashOver:PDO.php file could not be included!</code>，
+原因是某个地方PDO类忘了加根命名空间。目前这个问题已经有人提交了PR，官方合并之前我们可以自己先改一下。</p>
+
+<p><code>hashover/scripts/parsesql.php</code></p>
+
+<pre><code class="language-php">Line 76  在PDO前面加上“\”
+$fetchAll = $results-&gt;fetchAll (\PDO::FETCH_NUM);
+
+Line 111 同理
+return (array) $result-&gt;fetch (\PDO::FETCH_ASSOC);
+</code></pre>
+
+<h3>AJAX跨域问题</h3>
+
+<p>当在配置文件启用ajax模式的时候，你会发现所有请求全部失败了。
+因为hashover并没有对跨域访问进行处理（加cors头），所以请求被浏览器拦截。</p>
+
+<p>可在<code>hashover/scripts/settings.php</code>顶部加入代码或者用Nginx/apache进行配置。</p>
+
+<pre><code class="language-php">header(&quot;Access-Control-Allow-Origin:&quot;.(isset($_SERVER['HTTP_ORIGIN'])?$_SERVER['HTTP_ORIGIN']:&quot;*&quot;));
+header(&quot;Access-Control-Allow-Credentials:true&quot;);
+</code></pre>
+
+<h3>不保存用户信息问题</h3>
+
+<p>前文说过hashover并没有对跨域访问进行处理，所以只加cors头无法保存cookies。
+解决方法是在<code>hashover/scripts/javascript-mode.php</code>中查找<code>XMLHttpRequest</code>
+并给所有的XHR对象全部加上<code>withCredentials=true</code>。</p>
+
+<h2>美化（魔改）</h2>
+
+<p>HashOver提供一个主题机制，可以在<code>hashover/themes</code>各个主题的文件夹中修改<code>layout.html</code>和<code>style.css</code>来自定义样式。
+具体魔改例子可看本站评论区，也可自己下载本站CSS。</p>
+
+<h3>几个魔改想法（尚未实现）：</h3>
+
+<ul>
+<li>加上表情包</li>
+<li>加上显示地区和UA</li>
+<li>加上评论等级</li>
+<li>在不启用密码的情况下做评论管理</li>
+<li>魔改成弹幕系统的后端</li>
+</ul>
+
+<p>如果真能实现，这个系统就万能了（才不是呢）。</p>
+</article>
+            </article>
+        </article>
+		<article class="container2">
+			<div class="main article">
+				<section class="author">
+                    <div class="avatar" style="background-image: url(https://q.qlogo.cn/qqapp/100229475/B9BC376B79B4620E5E437DC3CD51F089/100);"></div>
+                    <a class="name" href="/about.me.html">某翁</a>
+                    <div class="intro">一个普通学生而已x</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/limitpng-online.html">移植无损压图工具LimitPNG到web端</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/new-start.html">MyBlog新的开始</a>
+                    </section>
+                    
+                </section>
+			</div>
+			
+<div id="comment">
+	<div id="hashover"></div>
+	<script>_http_page="http:\/\/blog.e123.pw/hashover.html"</script>
+	<script id="e123say" src="https://comment.homeii.info" async></script>
+</div>
+
+
+		</article>
+        <footer class="footer">
+    <span class="copyright">
+        翁の微语 ©
+        <script type="text/javascript"  data-no-instant>
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+	<span class="abc">
+		<span class="abctxt">文件存储&CDN由</span>
+		<span class="abctxt"><a href="https://www.upyun.com" rel="nofollow" target="_blank"><img src="/images/upyun.png"></a></span>
+		<span class="abctxt">提供</span>
+	</span>
+    <span class="publish"><a href="http://www.miibeian.gov.cn/">闽ICP备14012513号</a> Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+    <script src="/bundle/index.js"></script>
+    <script src="/bundle/instantClick.js?v1" data-no-instant></script>
+    </body>
+</html>
